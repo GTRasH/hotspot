@@ -48,11 +48,11 @@ is_valid_essid() {
 }
 
 login() {
-    u_file=$(tempfile)
+    u_file=$(mktemp)
     chmod 600 "$u_file"
     printf '%s' "$USER" > "$u_file"
 
-    p_file=$(tempfile)
+    p_file=$(mktemp)
     chmod 600 "$p_file"
     printf '%s' "$PASS" > "$p_file"
 
